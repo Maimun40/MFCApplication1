@@ -155,7 +155,7 @@ HCURSOR CMFCApplication1Dlg::OnQueryDragIcon()
 }
 
 
-
+//this is a comment dont mind it
 void CMFCApplication1Dlg::OnBnClickedCancel()
 {
 	// TODO: Add your control notification handler code here
