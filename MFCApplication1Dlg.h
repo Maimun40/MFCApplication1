@@ -33,4 +33,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedCancel();
+	afx_msg void OnNMClickSyslink1(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnBnClickedMfcmenubutton1();
+	afx_msg void OnBnClickedButton1();
 };

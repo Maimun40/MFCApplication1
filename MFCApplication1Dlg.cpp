@@ -66,6 +66,9 @@ BEGIN_MESSAGE_MAP(CMFCApplication1Dlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDCANCEL, &CMFCApplication1Dlg::OnBnClickedCancel)
+	ON_NOTIFY(NM_CLICK, IDC_SYSLINK1, &CMFCApplication1Dlg::OnNMClickSyslink1)
+	ON_BN_CLICKED(IDC_MFCMENUBUTTON1, &CMFCApplication1Dlg::OnBnClickedMfcmenubutton1)
+	ON_BN_CLICKED(IDC_BUTTON1, &CMFCApplication1Dlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -160,5 +163,28 @@ void CMFCApplication1Dlg::OnBnClickedCancel()
 {
 	// TODO: Add your control notification handler code here
 	MessageBox(_T("Hello World"), _T("Bye!"));
+	CDialogEx::OnCancel();
+}
+
+
+void CMFCApplication1Dlg::OnNMClickSyslink1(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	// TODO: Add your control notification handler code here
+	MessageBox(_T("Y u klik dis?!?!"), _T("Stoopid"));
+	*pResult = 0;
+}
+
+
+void CMFCApplication1Dlg::OnBnClickedMfcmenubutton1()
+{
+	// TODO: Add your control notification handler code here
+	MessageBox(_T("This doesnt work... Its your job to fix it lol i dont really care"), _T("No"));
+}
+
+
+void CMFCApplication1Dlg::OnBnClickedButton1()
+{
+	// TODO: Add your control notification handler code here
+	MessageBox(_T("Now DIE!"), _T("I said no...."));
 	CDialogEx::OnCancel();
 }
