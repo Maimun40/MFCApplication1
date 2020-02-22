@@ -59,6 +59,7 @@ CMFCApplication1Dlg::CMFCApplication1Dlg(CWnd* pParent /*=nullptr*/)
 void CMFCApplication1Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_EDIT1, m_ed_x);
 }
 
 BEGIN_MESSAGE_MAP(CMFCApplication1Dlg, CDialogEx)
@@ -69,6 +70,7 @@ BEGIN_MESSAGE_MAP(CMFCApplication1Dlg, CDialogEx)
 	ON_NOTIFY(NM_CLICK, IDC_SYSLINK1, &CMFCApplication1Dlg::OnNMClickSyslink1)
 	ON_BN_CLICKED(IDC_MFCMENUBUTTON1, &CMFCApplication1Dlg::OnBnClickedMfcmenubutton1)
 	ON_BN_CLICKED(IDC_BUTTON1, &CMFCApplication1Dlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON2, &CMFCApplication1Dlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -187,4 +189,28 @@ void CMFCApplication1Dlg::OnBnClickedButton1()
 	// TODO: Add your control notification handler code here
 	MessageBox(_T("Now DIE!"), _T("I said no...."));
 	CDialogEx::OnCancel();
+}
+
+
+void CMFCApplication1Dlg::OnBnClickedButton2()
+{
+	// TODO: Add your control notification handler code here
+	CString x;
+	m_ed_x.GetWindowTextW(x);
+	if (x == "") {
+		MessageBox(_T("Type a number!"), _T("BRUH"));
+	}
+	else
+	{
+		CString otg; double x1;
+		double x2; x1 = _ttof(x);
+		if (x1 < 0) {
+			MessageBox(_T("Type a positive number!"), _T("BRUH"));
+		}
+		else {
+			x2 = sqrt(x1);
+			otg.Format(_T("%lf"), x2);
+			MessageBox(_T("the anser is : ") + otg, _T("NICE"));
+		}
+	}
 }

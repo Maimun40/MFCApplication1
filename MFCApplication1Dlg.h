@@ -36,4 +36,6 @@ public:
 	afx_msg void OnNMClickSyslink1(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnBnClickedMfcmenubutton1();
 	afx_msg void OnBnClickedButton1();
+	CEdit m_ed_x;
+	afx_msg void OnBnClickedButton2();
 };
